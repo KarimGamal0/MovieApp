@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">MovieApp</string>
+
+    <string name="error_message">An error has occurred. Please swipe to REFRESH</string>
+
+    <string name="button_review_text">Reviews</string>
+
+
+    <!--menu options-->
+    <string name="popular_movies">Popular Movies</string>
+    <string name="top_rated_movies">Top Rated Movies</string>
+    <string name="favorites_movies">Favorite Movies</string>
+
+
+    <!--shared preferences-->
+    <string name="popular" translatable="false">popular</string>
+    <string name="top_rated" translatable="false">top_rated</string>
+
+    <string name="videos" translatable="false">videos</string>
+    <string name="reviews" translatable="false">reviews</string>
+
+    <string name="list_key">list</string>
+
+</resources>
