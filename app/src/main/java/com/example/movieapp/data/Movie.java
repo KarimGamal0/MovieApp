@@ -1,8 +1,9 @@
 package com.example.movieapp.data;
 
-import java.io.Serializable;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class Movie implements Serializable {
+public class Movie implements Parcelable {
     private double mPopularity;
     private int mVote_count;
     private boolean mVideo;
@@ -94,4 +95,57 @@ public class Movie implements Serializable {
     public String getRelease_date() {
         return mRelease_date;
     }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeDouble(this.mPopularity);
+        dest.writeInt(this.mVote_count);
+        //dest.writeBoolean(this.mVideo);
+        dest.writeString(this.mPoster_path);
+        dest.writeInt(this.mId);
+        //dest.writeBoolean(this.mAdult);
+        dest.writeString(this.mBackdrop_path);
+        dest.writeString(this.mOriginal_Language);
+        dest.writeString(this.mOriginal_title);
+        dest.writeIntArray(this.mGenre_ids);
+        dest.writeString(this.mTitle);
+        dest.writeInt(this.mVote_average);
+        dest.writeString(this.mOverview);
+        dest.writeString(this.mRelease_date);
+    }
+
+    protected Movie(Parcel in) {
+        this.mPopularity = in.readDouble();
+        this.mVote_count = in.readInt();
+        //this.mVideo = in.readBoolean();
+        this.mPoster_path = in.readString();
+        this.mId = in.readInt();
+        //this.mAdult = in.readBoolean();
+        this.mBackdrop_path = in.readString();
+        this.mOriginal_Language = in.readString();
+        this.mOriginal_title = in.readString();
+        this.mGenre_ids = in.createIntArray();
+        this.mTitle = in.readString();
+        this.mVote_average = in.readInt();
+        this.mOverview = in.readString();
+        this.mRelease_date = in.readString();
+    }
+
+    public static final Creator<Movie> CREATOR = new Creator<Movie>() {
+        @Override
+        public Movie createFromParcel(Parcel source) {
+            return new Movie(source);
+        }
+
+        @Override
+        public Movie[] newArray(int size) {
+            return new Movie[size];
+        }
+    };
 }

@@ -17,20 +17,20 @@
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?android:attr/selectableItemBackground"
         android:onClick="@{() -> itemClickListener.onClick(model)}"
-        app:cardBackgroundColor="#E6E6E6"
+        app:cardBackgroundColor="@color/trailer_card_color"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp">
 
         <LinearLayout
-            android:layout_width="200dp"
-            android:layout_height="130dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="120dp"
+            android:layout_height="155dp"
             android:orientation="vertical">
 
             <ImageView
@@ -41,14 +41,15 @@
                 android:src="@drawable/round_play_arrow_white_24" />
 
             <TextView
+                android:layout_margin="8dp"
                 android:id="@+id/tv_trailer_name"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:gravity="center"
+                android:textColor="@android:color/white"
                 android:text="@{model.name}"
                 android:textSize="12sp"
-                tools:text="Trailer 1" />
+                tools:text="Trailer one snyder cut movie the good movie " />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

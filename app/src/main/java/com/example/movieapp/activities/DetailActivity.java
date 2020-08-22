@@ -26,7 +26,7 @@ public class DetailActivity extends AppCompatActivity
         DetailFragment detailFragment = (DetailFragment)
                 getFragmentManager().findFragmentById(R.id.detail_frag);
 
-        Movie movie = (Movie) getIntent().getSerializableExtra("MovieData");
+        Movie movie = (Movie) getIntent().getParcelableExtra("MovieData");
         detailFragment.setMovie(movie);
     }
 

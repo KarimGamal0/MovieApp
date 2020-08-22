@@ -8,4 +8,8 @@
     <color name="detail_accent_pane_background">#455A64</color>
     <color name="detail_accent_label">#90A4AE</color>
 
+    <color name="surface_color">#ffffff</color>
+    <color name="trailer_card_color">#d50000</color>
+    <color name="review_card_color">#ede7f6</color>
+
 </resources>

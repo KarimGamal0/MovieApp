@@ -7,30 +7,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/detail_accent_pane_background">
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/horizontal_guide"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
-
-        <TextView
-            android:id="@+id/movieName"
-            style="@style/TextAppearance.AppCompat.Headline"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="8dp"
-            android:fontFamily="sans-serif-medium"
-            android:gravity="center"
-            android:textColor="@android:color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/moviePoster"
-            tools:text="Movie Name" />
+        android:background="#fff"
+        android:elevation="8dp">
 
         <TextView
             android:id="@+id/release_date"
@@ -40,10 +18,9 @@
             android:layout_marginTop="8dp"
             android:fontFamily="sans-serif-medium"
             android:gravity="center"
-            android:textColor="@android:color/white"
             android:textSize="30sp"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/movieName"
             tools:text="2019-09-17" />
 
         <View
@@ -51,7 +28,7 @@
             android:layout_width="2dp"
             android:layout_height="30dp"
             android:layout_marginLeft="8dp"
-            android:background="@android:color/white"
+            android:background="@android:color/black"
             app:layout_constraintBottom_toBottomOf="@id/release_date"
             app:layout_constraintLeft_toRightOf="@id/release_date"
             app:layout_constraintTop_toTopOf="@id/release_date" />
@@ -63,7 +40,6 @@
             android:layout_marginLeft="8dp"
             android:fontFamily="sans-serif-medium"
             android:text="PG-13"
-            android:textColor="@android:color/white"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="@+id/view1"
             app:layout_constraintLeft_toRightOf="@id/view1"
@@ -74,7 +50,7 @@
             android:layout_width="2dp"
             android:layout_height="30dp"
             android:layout_marginLeft="8dp"
-            android:background="@android:color/white"
+            android:background="@android:color/black"
             app:layout_constraintBottom_toBottomOf="@id/adult"
             app:layout_constraintLeft_toRightOf="@id/adult"
             app:layout_constraintTop_toTopOf="@id/adult" />
@@ -85,7 +61,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:fontFamily="sans-serif-medium"
-            android:textColor="@android:color/white"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="@+id/view2"
             app:layout_constraintStart_toEndOf="@id/view2"
@@ -99,7 +74,6 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:fontFamily="sans-serif-medium"
-            android:textColor="@android:color/white"
             android:textSize="40sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/release_date"
@@ -124,7 +98,6 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
             android:gravity="center"
-            android:textColor="@android:color/white"
             android:textSize="20sp"
             app:layout_constraintLeft_toLeftOf="@id/vote_average"
             app:layout_constraintRight_toRightOf="@id/full_mark"
@@ -139,7 +112,6 @@
             android:background="@android:color/holo_blue_dark"
             android:fontFamily="sans-serif-medium"
             android:gravity="center"
-            android:textColor="@android:color/white"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="@+id/vote_average"
             app:layout_constraintLeft_toRightOf="@id/full_mark"
@@ -155,7 +127,6 @@
             android:gravity="center"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
-            android:textColor="@android:color/white"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/vote_count"

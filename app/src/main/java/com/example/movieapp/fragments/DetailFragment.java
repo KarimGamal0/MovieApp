@@ -25,6 +25,7 @@ import com.example.movieapp.data.Trailer;
 import com.example.movieapp.databinding.FragmentDetailBinding;
 import com.example.movieapp.utilities.NetworkUtils;
 import com.squareup.picasso.Picasso;
+import com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView;
 
 import java.util.List;
 
@@ -34,10 +35,10 @@ public class DetailFragment extends Fragment {
 
     private Movie movie;
 
-    private RecyclerView mRecyclerViewTrailers;
+    private MultiSnapRecyclerView mRecyclerViewTrailers;
     private TrailersAdapter mTrailerAdapter;
 
-    private RecyclerView mRecyclerViewReviews;
+    private MultiSnapRecyclerView mRecyclerViewReviews;
     private ReviewsAdapter mReviewsAdapter;
 
     private FragmentDetailBinding mDetailBinding;
@@ -58,26 +59,23 @@ public class DetailFragment extends Fragment {
         super.onStart();
         mDetailBinding = DataBindingUtil.setContentView(getActivity(), R.layout.fragment_detail);
 
-        movie = (Movie) getActivity().getIntent().getSerializableExtra("MovieData");
-
-        Log.i("movie", movie.getTitle());
+        movie = (Movie) getActivity().getIntent().getParcelableExtra("MovieData");
 
         Picasso.get().load(NetworkUtils.IMAGE_URL + NetworkUtils.img_sizes[4] + movie.getBackdrop_path())
                 .into(mDetailBinding.moviePoster);
 
-        mDetailBinding.mainData.movieName.setText(movie.getTitle());
         mDetailBinding.mainData.overview.setText(movie.getOverview());
         mDetailBinding.mainData.voteAverage.setText(String.valueOf(movie.getVote_average()));
         mDetailBinding.mainData.voteCount.setText(String.valueOf(movie.getVote_count()));
         mDetailBinding.mainData.popularity.setText(String.valueOf(movie.getPopularity()));
         mDetailBinding.mainData.originalLanguage.setText(movie.getOriginal_Language());
         mDetailBinding.mainData.releaseDate.setText(movie.getRelease_date());
-        if (movie.isAdult()) {
+        /*if (movie.isAdult()) {
             mDetailBinding.mainData.adult.setText("R");
-        }
+        }*/
 
         // adapter and recycler of trailers
-        mRecyclerViewTrailers = mDetailBinding.trailerData.recyclerviewTrailers;
+        mRecyclerViewTrailers = mDetailBinding.trailersData;
         LinearLayoutManager layoutManager1 = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);
         mRecyclerViewTrailers.setLayoutManager(layoutManager1);
         mRecyclerViewTrailers.setHasFixedSize(true);
@@ -86,8 +84,8 @@ public class DetailFragment extends Fragment {
         mRecyclerViewTrailers.setAdapter(mTrailerAdapter);
 
         // adapter and recycler of reviews
-        mRecyclerViewReviews = mDetailBinding.reviewData.recyclerviewReviews;
-        LinearLayoutManager layoutManager2 = new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL, false);
+        mRecyclerViewReviews = mDetailBinding.reviewsData;
+        LinearLayoutManager layoutManager2 = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);
         mRecyclerViewReviews.setLayoutManager(layoutManager2);
         mRecyclerViewReviews.setHasFixedSize(true);
 
@@ -213,5 +211,4 @@ public class DetailFragment extends Fragment {
 
         }
     };
-
 }

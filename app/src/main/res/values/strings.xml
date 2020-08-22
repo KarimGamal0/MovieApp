@@ -21,4 +21,10 @@
 
     <string name="list_key">list</string>
 
+
+    <string name="trailer_label">Trailers</string>
+    <string name="review_label">Reviews</string>
+
+    <string name="trailer_warning">There is no trailer available</string>
+    <string name="review_warning">There is no review available</string>
 </resources>
